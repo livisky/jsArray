@@ -101,10 +101,10 @@
 
 12、数组操作兼容性
 ```javascript
-    IE8下
-    $.inArray 代替 indexOf
-
-    $.grep代替Array.prototype.filter
+        IE8下
+        $.inArray 代替 indexOf
+        
+        $.grep代替Array.prototype.filter
 ```
 
 
@@ -113,50 +113,50 @@
 
 1、jquery实现从数组移除指定的值
 ```javascript
-    function delItem(arr,m)
-    {
-        return $.grep(arr,function(n,i){
-            return n!=m
-        });
-    }
-    var a=[1,2,3,5,6,3,7,12];
-    delItem(a,3)
+        function delItem(arr,m)
+        {
+                return $.grep(arr,function(n,i){
+                    return n!=m
+                });
+        }
+        var a=[1,2,3,5,6,3,7,12];
+            delItem(a,3)
 ```
 或者
 ```javascript
-    function delItem(arr,m)
-    {
-        arr.splice($.inArray(m,arr),1);
-        return arr
-    }
-    var arr = ['a','b','c','d'];
-    delItem(arr,"c")
+        function delItem(arr,m)
+            {
+                arr.splice($.inArray(m,arr),1);
+                return arr
+            }
+        var arr = ['a','b','c','d'];
+            delItem(arr,"c")
 ```
 
 2、jquery实现从数组移除指定的数组
 ```javascript
-    function delArray(arr,delArr)
-    {
-        return $.grep(arr,function(n,i){
-            if( delArr.indexOf(n)>=0)
-            return n
-        },true);
-    }
-    var a=[1,2,3,5,6,3,7,12],
-         b=[5,7];
-    delArray(a,b)
+        function delArray(arr,delArr)
+        {
+                return $.grep(arr,function(n,i){
+                    if( delArr.indexOf(n)>=0)
+                    return n
+                },true);
+        }
+        var a=[1,2,3,5,6,3,7,12],
+            b=[5,7];
+            delArray(a,b)
 ```
 
 3、jquery找出2个数组同有的部分
 ```javascript
-    function findCommonArray(arr,delArr)
-    {
-        return $.grep(arr,function(n,i){
-            if( delArr.indexOf(n)>=0)
-                return n
-        });
-    }
-    var a=[1,2,3,5,6,3,7,12],
-         b=[5,7,9];
-    findCommonArray(a,b)
+        function findCommonArray(arr,delArr)
+        {
+                return $.grep(arr,function(n,i){
+                    if( delArr.indexOf(n)>=0)
+                        return n
+                });
+        }
+        var a=[1,2,3,5,6,3,7,12],
+            b=[5,7,9];
+            findCommonArray(a,b)
 ```
